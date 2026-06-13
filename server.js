@@ -275,7 +275,9 @@ app.get('/v1/models', (req, res) => {
     }))
   });
 });
-
+app.post('/', async (req, res) => {
+  res.redirect(307, '/v1/chat/completions');
+});
 app.post('/v1/chat/completions', async (req, res) => {
   let streamEndedCleanly = false;
   let upstreamStream = null;
