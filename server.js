@@ -46,9 +46,12 @@ validateConfig();
 
 // ─── Model Mapping ─────────────────────────────────────────────────────────
 
-const MODEL_MAPPING = {};
+const MODEL_MAPPING = {
+  'glm-5': 'gpt-oss:120b',
+  'gpt-4': 'gpt-oss:120b',
+  'default': 'gpt-oss:120b'};
 
-const FALLBACK_MODELS = [];
+const FALLBACK_MODELS = ['gpt-oss:120b'];
 
 // ─── Middleware ─────────────────────────────────────────────────────────────
 
