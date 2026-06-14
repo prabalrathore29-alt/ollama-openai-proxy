@@ -201,7 +201,10 @@ async function callWithFallback(baseRequest, models) {
   let lastError = null;
 
   for (const model of models) {
-    try {
+    try { console.log("BASE:", NIM_API_BASE);
+    console.log("KEY EXISTS:", !!NIM_API_KEY);
+    console.log("KEY PREFIX:", NIM_API_KEY?.substring(0, 8));
+    console.log("MODEL:", model); 
       const res = await axios.post(
         `${NIM_API_BASE}/chat/completions`,
         { ...baseRequest, model },
