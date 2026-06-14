@@ -221,6 +221,8 @@ async function callWithFallback(baseRequest, models) {
       return { response: res, model };
 
     } catch (err) {
+      console.log("STATUS:", err.response?.status);
+  console.log("DATA:", err.response?.data);
       lastError = err;
       console.warn(
         `[FALLBACK] Model failed: ${model}`,
